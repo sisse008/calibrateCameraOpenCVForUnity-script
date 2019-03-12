@@ -13,10 +13,13 @@ using UnityEngine;
 public class calibrateCamera : MonoBehaviour
 {
 
+    //Vector3 is a unity defined type of a 3d vector. each time save a point - save rigged hand position and a screen position.
+    //screen positions are all positions on the screen (0-max pixel width, 0-max pixel hieght, 0) were the hand is sceen when save point.
     public Vector3[] screenPositions;
+    //hand poisions is where the hand is in unity space (will later change this to leap space) of where the rigged hand is when save point.
     public Vector3[] handPositions;
 
-
+    //turn an array of 3d vectors to a list of Mat
     public List<OpenCVForUnity.CoreModule.Mat> Arrayof3DVectorstoListofMat(Vector3[] arrayOf3DVectors)
     {
 
@@ -55,13 +58,9 @@ public class calibrateCamera : MonoBehaviour
 
         //TODO: int flags
 
-
+        //if look at docs (url above class decleration) the calibrateCamera function needs all the arguments specified above.
         OpenCVForUnity.Calib3dModule.Calib3d.calibrateCamera();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
