@@ -53,7 +53,7 @@ public class calibrateCamera : MonoBehaviour
 
         //TODO: List<Mat> rvecs
 
-
+        //TODO: int flags
 
 
         OpenCVForUnity.Calib3dModule.Calib3d.calibrateCamera();
